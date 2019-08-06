@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Secret-code || Anayo Oleru</title>
-    <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8">
+  <title>Secret code || Anayo Oleru</title>
+  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
 </head>
-
 <body>
+<script>
+const pressed = [];
+const secretCodeOne = 'anayo';
+const secretCodeTwo = 'unscramble';
+const secretCodeThree = 'plankalkul';
 
-    <div class="description">
-        <p>30 days Vanilla Javascript code challenge</p>
-        <h1>Made with &hearts; by <a href="https://twitter.com/Anayo_Oleru">@Anayo Oleru</a></Link>
-        </h1>
-    </div>
-
-    <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
-    <script type="text/javascript" src="index.js"></script>
+window.addEventListener('keyup', (e) => {
+  console.log(e.key);
+  pressed.push(e.key);
+  pressed.splice(-secretCodeThree.length - 1, pressed.length - secretCodeThree.length);
+  if (pressed.join('').includes(secretCodeThree)) {
+    console.log('Yeah, you did it!, Follow me on twitter @Anayo_Oleru!');
+    cornify_add();
+  }
+  console.log(pressed);
+});
+</script>
 </body>
-
 </html>
